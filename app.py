@@ -113,7 +113,7 @@ I'm aishwarya chaudhary done my 11th and 12th from himalya public school
 currently i am studying BCA from iitm. I am in 2nd year now
 the languages right now i am learning is C,HTML,C++,PYTHON,PHP
 """
-Give Python Developer Resume"""
+
 
 query = final_prompt + user_details
 
