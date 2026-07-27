@@ -26,7 +26,7 @@ model=ChatGoogleGenerativeAI(
     model='gemini-3.5-flash-lite',
     google_api_key=GOOGLE_API_KEY
 ) 
-prompt_generator(model)
+
 def search_recent_news_jobs(query):
   """This function helps to search
   recent news or recent jobs
@@ -47,7 +47,7 @@ agent=create_agent(
 
 )    
 # ====================promt generation ===================
-prompt_generator(model)
+
 
 def prompt_generation(agent):
   """This function helps to give detailed prompt
@@ -70,13 +70,14 @@ def prompt_generation(agent):
   with open(file_name,'w') as f:
     f.write(response.content[-1]['text'])
   return "prompt file generated Successfully,agent can read it" 
-
+prompt_generation(model)
   def resumme_maker_prompt():
       """This function just gives
       updated prompt for model"""
   with open('prompt.py','r') as f:
     prompt=f.read()
   return prompt  
+resume_maker_prompt()
   #=====================generate resume=============== 
 
   prompt="""you are a heplful ai assistant
