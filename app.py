@@ -7,7 +7,6 @@ download AI created resume based on high ATS Score""")
 
 # ==============AGENT CODE===========
 
-import IPython as ip
 import os
 import time
 import langchain
@@ -26,7 +25,8 @@ TAVILY_API_KEY=st.sidebar.text_input("TAVILY_API_KEY",type="password")
 model=ChatGoogleGenerativeAI(
     model='gemini-3.5-flash-lite',
     google_api_key=GOOGLE_API_KEY
-)
+) 
+prompt_generator(model)
 def search_recent_news_jobs(query):
   """This function helps to search
   recent news or recent jobs
@@ -47,6 +47,7 @@ agent=create_agent(
 
 )    
 # ====================promt generation ===================
+prompt_generator(model)
 
 def prompt_generation(agent):
   """This function helps to give detailed prompt
@@ -98,4 +99,7 @@ if st.button("Generate Button"):
   with st.spinner("Running Agent..."):
     response = agent.invoke({'messages':[{'role':'user','content':query}]})
     code=response['messages'][-1].content[-1]['text']  
+
+    #st.markdown(code)
+    st.html(code,width="stretch",unsafe_allow_javascript=True)
 
