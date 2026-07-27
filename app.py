@@ -72,8 +72,8 @@ def prompt_generation(agent):
   return "prompt file generated Successfully,agent can read it" 
 
   def resumme_maker_prompt():
-  """This function just gives
-   updated prompt for model"""
+      """This function just gives
+      updated prompt for model"""
   with open('prompt.py','r') as f:
     prompt=f.read()
   return prompt  
