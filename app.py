@@ -139,7 +139,7 @@ final_prompt = prompt + resume_maker_prompt()
 user_info=st.text_input("Enter your information") 
 
 user_details=f"""user details: given below:
-Resume info: {use_info}
+Resume info: {user_info}
 Photo: {uploaded_file} 
 photo present in current directory with name as
 uploaded_file, and once resume generated give
