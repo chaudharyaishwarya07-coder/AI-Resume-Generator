@@ -105,7 +105,7 @@ def resume_maker_prompt():
 
 resume_maker_prompt() 
 #============================UPLOAD TIME============================
-uploaded_file=st.sidebar.file_uploaded(
+uploaded_file=st.sidebar.file_uploader(
     "choose an image file",
     type=["jpg","jpeg","png","webp"]
 )
